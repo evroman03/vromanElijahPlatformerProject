@@ -51,7 +51,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "platforms")
         {
-            print("shit");
+            print("testhit");
         }
     }
 
