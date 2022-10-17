@@ -8,6 +8,7 @@ public class FastballBehavior : MonoBehaviour
 
     public GameObject playerPos;
     private Rigidbody2D rb;
+    
 
     private Transform player;
     private Vector2 incomingVelocity;
@@ -18,23 +19,20 @@ public class FastballBehavior : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
         playerPos = GameObject.Find("Player");
       
         Vector3 difAngle = (playerPos.transform.position - transform.position);
-        
+        //Finds difference from players transform and balls transform after ball is spawned
+
         rb.AddForce(difAngle * 100f);
+        //Add force takes destination/endpoint and a magnitude.
 
         Timer = .5f;
 
 
-
-
-
-
-
-
-
         Destroy(gameObject, 5f);
+        //Destorys object after 5 seconds.
     }
 
     // Update is called once per frame
@@ -47,6 +45,7 @@ public class FastballBehavior : MonoBehaviour
         {
             rb.gravityScale = 1.75f;
         }
+        //Creates a more realistic gravity effect on ball
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -56,6 +55,7 @@ public class FastballBehavior : MonoBehaviour
             var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
             rb.velocity = direction * speed * 0.75f;
         } 
+        
     } 
 
 }

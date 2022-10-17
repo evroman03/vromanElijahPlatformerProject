@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6848163479788088522}
   - component: {fileID: 6973329533822493970}
   - component: {fileID: 7650043181468937759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -137,3 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPos: {fileID: 0}
+  Timer: 0

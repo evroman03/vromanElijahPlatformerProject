@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - platforms
+  - Ball
+  - Enemy
+  - Borders
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -12,9 +15,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Ball
+  - Platform
+  - Enemy
   - 
   - 
   - 
