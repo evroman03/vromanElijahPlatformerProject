@@ -7,12 +7,14 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
     public float UserSpeed = 8;
-    public float Timer;
-    public Vector2 jumpMag = new Vector2(0, 1200);
+
+    public Vector2 jumpMag = new Vector2(0, 900);
 
     private Rigidbody2D rb2D;
 
+    bool DBLJump = true;
     bool JumpTimeout = false;
+   
 
 
     void Start()
@@ -34,10 +36,29 @@ public class PlayerBehavior : MonoBehaviour
         {
             rb2D.velocity = Vector2.zero;
             rb2D.AddForce(jumpMag);
+            
             JumpTimeout = true;
-            Timer = .55f;
+            
+         
         }
-        if(JumpTimeout == true)
+        else if (DBLJump == true && Input.GetKeyDown(KeyCode.W))
+        {
+            rb2D.velocity = Vector2.zero;
+            rb2D.AddForce(jumpMag);
+            DBLJump = false;    
+        }
+
+
+
+        /*if (DBLJump = true && Input.GetKeyDown(KeyCode.W) && !JumpTimeout)
+        {
+            rb2D.velocity = Vector2.zero;
+            rb2D.AddForce(jumpMag);
+            JumpTimeout = true;
+            
+        }
+        */
+       /* if(JumpTimeout == true)
             {
                
                 Timer = Timer - Time.deltaTime;
@@ -46,12 +67,15 @@ public class PlayerBehavior : MonoBehaviour
                     JumpTimeout = false;
                 }
             }
+       */
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "platforms")
+        if (collision.gameObject.tag == "Platform")
         {
             print("testhit");
+            JumpTimeout = false;
+            DBLJump = true;
         }
     }
 
