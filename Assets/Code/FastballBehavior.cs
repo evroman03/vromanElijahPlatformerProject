@@ -14,6 +14,7 @@ public class FastballBehavior : MonoBehaviour
     private Vector2 incomingVelocity;
     public float Timer;
 
+    public bool Shield = false;
 
 
     void Start()
@@ -43,19 +44,31 @@ public class FastballBehavior : MonoBehaviour
         Timer = Timer - Time.deltaTime;
         if (Timer <= 0)
         {
-            rb.gravityScale = 1.75f;
+            rb.gravityScale = 1.25f;
         }
         //Creates a more realistic gravity effect on ball
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-         if (collision.gameObject.tag == "Borders" || collision.gameObject.tag == "Platform")
+         if (collision.gameObject.tag == "Borders" || collision.gameObject.tag == "Bat")
         {
             var speed = incomingVelocity.magnitude;
             var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
             rb.velocity = direction * speed * 0.75f;
-        } 
-        
+        }
+        if (collision.gameObject.tag == "Player") // and !Shield
+        {
+            //start death anim?
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
+            gCBehavior.UpdateScoreEnemy();
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
     } 
 
 }
