@@ -5,6 +5,7 @@ using System.Threading;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -101,7 +102,7 @@ public class PlayerBehavior : MonoBehaviour
             
         }
         
-
+        //if (Input.GetKeyDown(KeyCode.Z) && Drank >= 1f)
 
 
 
@@ -118,7 +119,6 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform")
         {
-           
             JumpTimeout = false;
             DBLJump = true;
         }
@@ -133,6 +133,17 @@ public class PlayerBehavior : MonoBehaviour
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
             gCBehavior.UpdateShield();
             Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Drank")
+        {
+            GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
+            gCBehavior.UpdateDrank();
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
     }
 
