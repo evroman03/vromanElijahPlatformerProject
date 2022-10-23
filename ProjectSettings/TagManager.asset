@@ -9,6 +9,8 @@ TagManager:
   - Borders
   - Platform
   - Bat
+  - Bonus
+  - Shield
   layers:
   - Default
   - TransparentFX

@@ -56,9 +56,10 @@ public class FastballBehavior : MonoBehaviour
             var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
             rb.velocity = direction * speed * 0.75f;
         }
-        if (collision.gameObject.tag == "Player") // and !Shield
+        if (collision.gameObject.tag == "Player")
         {
-            //start death anim?
+            GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
+            gCBehavior.UpdateLives();
             Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Enemy")

@@ -122,6 +122,18 @@ public class PlayerBehavior : MonoBehaviour
             JumpTimeout = false;
             DBLJump = true;
         }
+        if (collision.gameObject.tag == "Bonus")
+        {
+            GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
+            gCBehavior.UpdateScoreBonus();
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Shield")
+        {
+            GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
+            gCBehavior.UpdateShield();
+            Destroy(collision.gameObject);
+        }
     }
 
 

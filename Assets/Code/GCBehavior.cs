@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
 public class GCBehavior : MonoBehaviour
 {
-    public TMP_Text LivesText;
+    public TMP_Text ShieldText;
     public TMP_Text ScoreText;
+    
     public int Lives = 1;
+    public int Shield = 0;
     public int Score;
 
 
@@ -25,25 +28,36 @@ public class GCBehavior : MonoBehaviour
     public void UpdateLives()
     {
         Lives -= 1;
-        LivesText.text = "Lives: " + Lives;
-        if (Lives <= 0)
+        
+        if (Lives <= 0 && Shield == 0)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
+        else if (Lives <= 0 && Shield == 1)
+        {
+            Shield -= 1;
+            ShieldText.text = "x " + Shield;
+        }
     }
-    public void UpdateScorePwrUp()
+    public void UpdateScoreBonus()
     {
         Score += 250;
-        ScoreText.text = "Score: " + Score;
+        ScoreText.text = " " + Score;
     }
     public void UpdateScoreEnemy()
     {
         Score += 1000;
-        ScoreText.text = "Score: " + Score;
+        ScoreText.text = " " + Score;
     }
     public void UpdateScoreReflectFB()
     {
         Score += 500;
-        ScoreText.text = "Score: " + Score;
+        ScoreText.text = " " + Score;
+    }
+    public void UpdateShield()
+    {
+        Shield += 1;
+        ShieldText.text = "x " + Shield;
+
     }
 }
