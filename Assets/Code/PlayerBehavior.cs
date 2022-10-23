@@ -11,7 +11,7 @@ public class PlayerBehavior : MonoBehaviour
 {
     public float UserSpeed = 8;
     public float SlideSpeed = 20;
-
+    public float BatCDTimer;
 
     public GameObject Bat;
     private float direction = 0f;
@@ -30,6 +30,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         
         rb2D = GetComponent<Rigidbody2D>();
+        BatCDTimer = .5f;
        
     }
 
@@ -95,11 +96,10 @@ public class PlayerBehavior : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && !Sliding || (Input.GetKeyDown(KeyCode.Mouse0)) && !Sliding)
+        if ((Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Mouse0))) && !Sliding && !GCBehavior.batCooldown)
         {
             print("testhit#2");
             Bat.SetActive(true);
-            
         }
         
         //if (Input.GetKeyDown(KeyCode.Z) && Drank >= 1f)

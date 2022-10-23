@@ -9,23 +9,29 @@ public class GCBehavior : MonoBehaviour
     public TMP_Text ShieldText;
     public TMP_Text ScoreText;
     public TMP_Text DrankText;
+    public TMP_Text StopwatchText;
+
+    public float Stopwatch;
 
     public int Lives = 1;
     public int Shield = 0;
     public int Drank = 0;
     public int Score;
 
+    public static bool batCooldown = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Stopwatch = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Stopwatch = Stopwatch + Time.deltaTime;
+        StopwatchText.text = " " + Stopwatch;
     }
     public void UpdateLives()
     {

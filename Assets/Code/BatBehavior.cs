@@ -5,11 +5,11 @@ using UnityEngine;
 public class BatBehavior : MonoBehaviour
 {
     private float BatSwingTimer;
-    public GameObject Bat;
     // Start is called before the first frame update
     void Start()
     {
-        BatSwingTimer = .25f;
+        BatSwingTimer = .75f;
+        GCBehavior.batCooldown = true;
     }
 
     // Update is called once per frame
@@ -18,7 +18,10 @@ public class BatBehavior : MonoBehaviour
         BatSwingTimer = BatSwingTimer - Time.deltaTime;
         if (BatSwingTimer <= 0f)
         {
-            Bat.SetActive(false);
+            BatSwingTimer = .75f;
+            gameObject.SetActive(false);
+            GCBehavior.batCooldown = false;
+
         }
     }
 }
