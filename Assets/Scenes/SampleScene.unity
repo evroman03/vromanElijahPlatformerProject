@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 350087194}
   - component: {fileID: 350087195}
   - component: {fileID: 350087196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bat
   m_TagString: Bat
   m_Icon: {fileID: 0}

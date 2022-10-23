@@ -26,7 +26,7 @@ public class FastballBehavior : MonoBehaviour
         Vector3 difAngle = (playerPos.transform.position - transform.position);
         //Finds difference from players transform and balls transform after ball is spawned
 
-        rb.AddForce(difAngle * 90f);
+        rb.AddForce(difAngle * 50f);
         //Add force takes destination/endpoint and a magnitude.
 
         Timer = .3f;
