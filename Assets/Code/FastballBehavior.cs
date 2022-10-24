@@ -10,7 +10,6 @@ public class FastballBehavior : MonoBehaviour
     private Rigidbody2D rb;
     
 
-    private Transform player;
     private Vector2 incomingVelocity;
     public float Timer;
 
@@ -26,10 +25,10 @@ public class FastballBehavior : MonoBehaviour
         Vector3 difAngle = (playerPos.transform.position - transform.position);
         //Finds difference from players transform and balls transform after ball is spawned
 
-        rb.AddForce(difAngle * 50f);
+        rb.AddForce(difAngle * 70f);
         //Add force takes destination/endpoint and a magnitude.
 
-        Timer = .3f;
+        Timer = .5f;
 
 
         Destroy(gameObject, 5f);
@@ -56,13 +55,16 @@ public class FastballBehavior : MonoBehaviour
             var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
             rb.velocity = direction * speed * 0.75f;
         }
-        if (collision.gameObject.tag == "Player")
+
+        else if (collision.gameObject.tag == "Player")
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
             gCBehavior.UpdateLives();
             Destroy(gameObject);
+            
         }
-        if (collision.gameObject.tag == "Enemy")
+
+        else if (collision.gameObject.tag == "Enemy")
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
             gCBehavior.UpdateScoreEnemy();

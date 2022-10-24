@@ -8,19 +8,32 @@ public class EnemyBehavior : MonoBehaviour
     public Transform enemyFront;
     public Rigidbody2D Enemyrb2D;
 
+
+    public float AttackdDelay;
+
+
     void Start()
     {
-        
+        AttackdDelay = 4f;
+        StartCoroutine(ShootTimer());
+        //will run code if in a loop. yield return tells it to wait for a certain amount of time, and then goes back.
+    
+
     }
 
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+      
+    }
+    
+    IEnumerator ShootTimer()
+    {
+       
+        while(true)
         {
             Instantiate(Ball, enemyFront.position, Quaternion.identity);
-
+            yield return new WaitForSecondsRealtime(AttackdDelay);
         }
-        //GetComponent<Rigidbody2D>().transform.position.x;
     }
 }

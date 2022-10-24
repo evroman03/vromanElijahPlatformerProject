@@ -11,44 +11,47 @@ public class PlayerBehavior : MonoBehaviour
 {
     public float UserSpeed = 8;
     public float SlideSpeed = 20;
-    public float BatCDTimer;
+    
 
     public GameObject Bat;
-    private float direction = 0f;
+    
 
     public Vector2 jumpMag = new Vector2(0, 900);
 
-
+    private SpriteRenderer sr;
+    private SpriteRenderer eyesr;
     private Rigidbody2D rb2D;
 
     bool DBLJump = true;
     bool JumpTimeout = false;
-    bool Swing = false;
     bool Sliding = false;
 
     void Start()
     {
         
         rb2D = GetComponent<Rigidbody2D>();
-        BatCDTimer = .5f;
+        sr = GetComponent<SpriteRenderer>();
        
     }
 
     private void Update()
     {
         //Normal Movement
-        direction = Input.GetAxis("Horizontal");
+       
 
         if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.right * UserSpeed * Time.deltaTime);
             transform.localScale = new Vector2(1f, 1f);
+            sr.flipX = false;
+       
         }
         if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.left * UserSpeed * Time.deltaTime);
-            transform.localScale = new Vector2(-1f, 1f);
-            
+            transform.localScale = new Vector2(1f, 1f);
+            sr.flipX = true;
+        
            
         }
 
@@ -59,13 +62,17 @@ public class PlayerBehavior : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(1.5f, 0.75f);
             GetComponent<Transform>().localScale = new Vector2(1.5f, 0.75f);
             Sliding = true;
+            sr.flipX = false;
+          
         }
         if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.left * SlideSpeed * Time.deltaTime);
             GetComponent<BoxCollider2D>().size = new Vector2(1.5f, 0.75f);
-            GetComponent<Transform>().localScale = new Vector2(-1.5f, 0.75f);
+            GetComponent<Transform>().localScale = new Vector2(1.5f, 0.75f);
             Sliding = true;
+            sr.flipX = true;
+         
         }
 
 
