@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BatBehavior : MonoBehaviour
 {
-    private float BatSwingTimer;
+    private float batSwingTimer;
     public GameObject Player;
-    private Vector2 Offset = new Vector2 (0.5f, 0.25f);
+    private Vector2 offset = new Vector2 (0.5f, 0.25f);
     private SpriteRenderer sr;
     private BoxCollider2D bc;
 
@@ -14,8 +14,8 @@ public class BatBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BatSwingTimer = .75f;
-        GCBehavior.batCooldown = true;
+        batSwingTimer = .75f;
+        GCBehavior.BatCooldown = true;
         sr = GetComponent<SpriteRenderer>();
         bc = GetComponent<BoxCollider2D>();
     }
@@ -23,25 +23,25 @@ public class BatBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BatSwingTimer = BatSwingTimer - Time.deltaTime;
-        if (BatSwingTimer <= 0f)
+        batSwingTimer = batSwingTimer - Time.deltaTime;
+        if (batSwingTimer <= 0f)
         {
-            BatSwingTimer = .75f;
+            batSwingTimer = .75f;
             gameObject.SetActive(false);
-            GCBehavior.batCooldown = false;
+            GCBehavior.BatCooldown = false;
 
         }
-        gameObject.transform.position = new Vector3(Player.transform.position.x + Offset.x,
-            Player.transform.position.y + Offset.y, gameObject.transform.position.z);
+        gameObject.transform.position = new Vector3(Player.transform.position.x + offset.x,
+            Player.transform.position.y + offset.y, gameObject.transform.position.z);
         if (Player.GetComponent<SpriteRenderer>().flipX == true)
         {
-            Offset.x = -.5f;
+            offset.x = -.5f;
             sr.flipX = true;
             bc.offset = new Vector2(-0.3f, 0.025f);
         }
         else
         {
-            Offset.x = .5f;
+            offset.x = .5f;
             sr.flipX = false;
             bc.offset = new Vector2(0.3f, 0.025f);
         }

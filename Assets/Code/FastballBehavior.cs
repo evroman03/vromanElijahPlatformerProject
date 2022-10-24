@@ -6,7 +6,7 @@ using UnityEngine;
 public class FastballBehavior : MonoBehaviour
 {
 
-    public GameObject playerPos;
+    public GameObject PlayerPos;
     private Rigidbody2D rb;
     
 
@@ -21,9 +21,9 @@ public class FastballBehavior : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         
-        playerPos = GameObject.Find("Player");
+        PlayerPos = GameObject.Find("Player");
       
-        Vector3 difAngle = (playerPos.transform.position - transform.position);
+        Vector3 difAngle = (PlayerPos.transform.position - transform.position);
         //Finds difference from players transform and balls transform after ball is spawned
 
         rb.AddForce(difAngle * 60f);

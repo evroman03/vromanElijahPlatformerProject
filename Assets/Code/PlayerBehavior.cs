@@ -13,11 +13,10 @@ public class PlayerBehavior : MonoBehaviour
     public float DrankTimer;
 
     public GameObject Bat;
-    public Vector2 jumpMag = new Vector2(0, 900);
+    public Vector2 JumpMag = new Vector2(0, 900);
 
     
     private SpriteRenderer sr;
-    private SpriteRenderer eyesr;
     private Rigidbody2D rb2D;
 
     bool DBLJump = true;
@@ -99,19 +98,19 @@ public class PlayerBehavior : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && !JumpTimeout)
         {
             rb2D.velocity = Vector2.zero;
-            rb2D.AddForce(jumpMag);
+            rb2D.AddForce(JumpMag);
             JumpTimeout = true;
         }
         else if (DBLJump == true && Input.GetKeyDown(KeyCode.W))
         {
             rb2D.velocity = Vector2.zero;
-            rb2D.AddForce(jumpMag);
+            rb2D.AddForce(JumpMag);
             DBLJump = false;
         }
 
 
 
-        if ((Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Mouse0))) && !Sliding && !GCBehavior.batCooldown)
+        if ((Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Mouse0))) && !Sliding && !GCBehavior.BatCooldown)
         {   
             Bat.SetActive(true);
         }

@@ -21,7 +21,7 @@ public class GCBehavior : MonoBehaviour
     public int Drank = 0;
     public int Score;
 
-    public static bool batCooldown = false;
+    public static bool BatCooldown = false;
 
 
     // Start is called before the first frame update
