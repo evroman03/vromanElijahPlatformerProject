@@ -12,6 +12,7 @@ public class FastballBehavior : MonoBehaviour
 
     private Vector2 incomingVelocity;
     public float Timer;
+    
 
     public bool Shield = false;
 
@@ -25,14 +26,14 @@ public class FastballBehavior : MonoBehaviour
         Vector3 difAngle = (playerPos.transform.position - transform.position);
         //Finds difference from players transform and balls transform after ball is spawned
 
-        rb.AddForce(difAngle * 70f);
+        rb.AddForce(difAngle * 60f);
         //Add force takes destination/endpoint and a magnitude.
 
-        Timer = .5f;
+        Timer = .85f;
 
 
-        Destroy(gameObject, 5f);
-        //Destorys object after 5 seconds.
+        Destroy(gameObject, 2f);
+        //Destorys object after 2 seconds.
     }
 
     // Update is called once per frame
@@ -53,7 +54,8 @@ public class FastballBehavior : MonoBehaviour
         {
             var speed = incomingVelocity.magnitude;
             var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
-            rb.velocity = direction * speed * 0.75f;
+            rb.velocity = direction * speed * 1.75f;
+            //This needs a LOT of work, in order to make hitting the ball at an enemy feasible.
         }
 
         else if (collision.gameObject.tag == "Player")
@@ -71,6 +73,7 @@ public class FastballBehavior : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
+        
 
     } 
 

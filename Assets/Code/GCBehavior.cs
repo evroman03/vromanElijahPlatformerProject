@@ -6,10 +6,13 @@ using UnityEngine;
 
 public class GCBehavior : MonoBehaviour
 {
+   
     public TMP_Text ShieldText;
     public TMP_Text ScoreText;
     public TMP_Text DrankText;
     public TMP_Text StopwatchText;
+
+    public GameObject LoseScreen;
 
     public float Stopwatch;
 
@@ -32,6 +35,11 @@ public class GCBehavior : MonoBehaviour
     {
         Stopwatch = Stopwatch + Time.deltaTime;
         StopwatchText.text = " " + Stopwatch;
+        if (Input.GetKey(KeyCode.R))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            LoseScreen.SetActive(false);
+        }
     }
     public void UpdateLives()
     {
@@ -39,7 +47,7 @@ public class GCBehavior : MonoBehaviour
 
         if (Lives <= 0 && Shield == 0)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            LoseScreen.SetActive(true);
         }
         else if (Lives <= 0 && Shield == 1)
         {
@@ -73,4 +81,5 @@ public class GCBehavior : MonoBehaviour
         Drank += 1;
         DrankText.text = "x" + Drank;
     }
+    
 }

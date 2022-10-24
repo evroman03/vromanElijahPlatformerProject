@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using UnityEditor.Experimental.GraphView;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
-    public float UserSpeed = 8;
-    public float SlideSpeed = 20;
-    
+    public float UserSpeed = 6;
+    public float SlideSpeed = 15;
+    public float DrankTimer;
 
     public GameObject Bat;
-    
-
     public Vector2 jumpMag = new Vector2(0, 900);
 
+    
     private SpriteRenderer sr;
     private SpriteRenderer eyesr;
     private Rigidbody2D rb2D;
@@ -31,6 +29,7 @@ public class PlayerBehavior : MonoBehaviour
         
         rb2D = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        
        
     }
 
@@ -72,9 +71,20 @@ public class PlayerBehavior : MonoBehaviour
             GetComponent<Transform>().localScale = new Vector2(1.5f, 0.75f);
             Sliding = true;
             sr.flipX = true;
-         
         }
-
+        if (DrankTimer > 0)
+        {
+            UserSpeed = 10;
+            SlideSpeed = 20;
+            DrankTimer = DrankTimer - Time.deltaTime;
+        }
+        if (DrankTimer <= 0)
+        {
+            UserSpeed = 6;
+            SlideSpeed = 15;
+            //Drank -= 1f;
+            //DrankText.text = "x " + Drank;
+        }
 
         //Resets slide stretching
         if (!Input.GetKey(KeyCode.S))
@@ -90,10 +100,8 @@ public class PlayerBehavior : MonoBehaviour
         {
             rb2D.velocity = Vector2.zero;
             rb2D.AddForce(jumpMag);
-
             JumpTimeout = true;
         }
-
         else if (DBLJump == true && Input.GetKeyDown(KeyCode.W))
         {
             rb2D.velocity = Vector2.zero;
@@ -104,21 +112,9 @@ public class PlayerBehavior : MonoBehaviour
 
 
         if ((Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Mouse0))) && !Sliding && !GCBehavior.batCooldown)
-        {
-            print("testhit#2");
+        {   
             Bat.SetActive(true);
         }
-        
-        //if (Input.GetKeyDown(KeyCode.Z) && Drank >= 1f)
-
-
-
-
-
-
-
-
-
     }
     
 
@@ -152,8 +148,10 @@ public class PlayerBehavior : MonoBehaviour
             Destroy(gameObject);
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
+        if (collision.gameObject.tag == "Drank")
+        {
+            DrankTimer = 3f;
+            Destroy(collision.gameObject);
+        }
     }
-
-
-
 }

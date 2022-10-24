@@ -9,15 +9,15 @@ public class EnemyBehavior : MonoBehaviour
     public Rigidbody2D Enemyrb2D;
 
 
-    public float AttackdDelay;
+    public float AttackDelay;
 
 
     void Start()
     {
-        AttackdDelay = 4f;
+        AttackDelay = 4f;
         StartCoroutine(ShootTimer());
         //will run code if in a loop. yield return tells it to wait for a certain amount of time, and then goes back.
-    
+        // TA helped with this Coroutine
 
     }
 
@@ -33,7 +33,7 @@ public class EnemyBehavior : MonoBehaviour
         while(true)
         {
             Instantiate(Ball, enemyFront.position, Quaternion.identity);
-            yield return new WaitForSecondsRealtime(AttackdDelay);
+            yield return new WaitForSecondsRealtime(AttackDelay);
         }
     }
 }
