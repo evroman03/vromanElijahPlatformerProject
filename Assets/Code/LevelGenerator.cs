@@ -6,12 +6,13 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {   
     public Transform Level0_1;
-    public List<Transform> levelPartList;
+    public Transform Level1_1;
+    
 
     
     private Vector3 lastEndPosition;
 
-    private const float SpawnDistance = 150f;
+    private const float SpawnDistance = 25f;
     //How far ahead the world will generate
     public GameObject player;
 
@@ -23,7 +24,7 @@ public class LevelGenerator : MonoBehaviour
         SpawnLevelPart();
         //This calls the SpawnLevelPart f(x) 
         //Spawns a new level part after the previous one
-        int startingSpawnedLevelParts = 5;
+        int startingSpawnedLevelParts = 3;
         for (int i = 0; i < startingSpawnedLevelParts; i++)
             //as long as i (minimum is set to 0 in this case) is not 0 and less than 5, it will do the following:
             //ASK ZACH about that def to clarify ^
@@ -43,18 +44,17 @@ public class LevelGenerator : MonoBehaviour
         //this will calculate a spawn position
         //takes a Vector3  
     {
-        Transform chosenLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
-        Transform lastLevelPartTransform = SpawnLevelPart(chosenLevelPart, lastEndPosition);
-        //This part, unless im mistaken, is the actual spawn code. Spawns (chosenLevelPart) at last end position, which is the
+
+        Transform lastLevelPartTransform = SpawnLevelPart(lastEndPosition);
+        //This part, unless im mistaken, is the actual spawn code. Spawns at last end position, which is the
         // EndPosition's position
         lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
     }
-    private Transform SpawnLevelPart(Transform.levelPart, Vector3 spawnPos)
-    //Return a transform for the level part
+    private Transform SpawnLevelPart(Vector3 spawnPos)
     //Return a transform to locate the next one
     //New function. Recieves a vector 3
     {
-        Transform levelPartTransform = Instantiate(levelPart, spawnPos, Quaternion.identity);
+        Transform levelPartTransform = Instantiate(Level1_1, spawnPos, Quaternion.identity);
         return levelPartTransform;
         //Gives the instantiated part's transform back to SpawnLevelPart in Start
     }
