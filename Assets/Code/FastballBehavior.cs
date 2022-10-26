@@ -14,7 +14,7 @@ public class FastballBehavior : MonoBehaviour
     public float Timer;
     
 
-    public bool Shield = false;
+
 
 
     void Start()
@@ -25,14 +25,14 @@ public class FastballBehavior : MonoBehaviour
       
         Vector3 difAngle = (PlayerPos.transform.position - transform.position);
         //Finds difference from players transform and balls transform after ball is spawned
-
-        rb.AddForce(difAngle * 60f);
+        
+        rb.AddForce(difAngle.normalized * 15f, ForceMode2D.Impulse);
         //Add force takes destination/endpoint and a magnitude.
 
         Timer = .85f;
 
 
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 1.5f);
         //Destorys object after 2 seconds.
     }
 
@@ -50,12 +50,18 @@ public class FastballBehavior : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-         if (collision.gameObject.tag == "Borders" || collision.gameObject.tag == "Bat")
+         if ( collision.gameObject.tag == "Bat")
         {
             var speed = incomingVelocity.magnitude;
-            var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
-            rb.velocity = direction * speed * 1.75f;
-            //This needs a LOT of work, in order to make hitting the ball at an enemy feasible.
+            //var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
+
+            rb.velocity = rb.velocity * -1f * speed * 1.75f;
+
+
+
+
+            gameObject.layer = LayerMask.NameToLayer("Ball");
+        
         }
 
         else if (collision.gameObject.tag == "Player")

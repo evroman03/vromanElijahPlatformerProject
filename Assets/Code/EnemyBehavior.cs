@@ -7,7 +7,7 @@ public class EnemyBehavior : MonoBehaviour
     public Rigidbody2D Ball;
     public Transform enemyFront;
     public Rigidbody2D Enemyrb2D;
-
+    public GameObject PlayerPos;
 
     public float AttackDelay;
 
@@ -24,7 +24,8 @@ public class EnemyBehavior : MonoBehaviour
     
     void Update()
     {
-      
+        PlayerPos = GameObject.Find("Player");
+       // if (PlayerPos.transform.position >= transform.position)
     }
     
     IEnumerator ShootTimer()
