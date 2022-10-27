@@ -13,7 +13,11 @@ public class DEATHBehavior : MonoBehaviour
     // Update is called once per frame
     IEnumerator DestroySelf()
     {
-        yield return new WaitForSeconds(secondsToDestroy);
-        Destroy(gameObject);
+        while (true)
+        {
+            yield return new WaitForSeconds(secondsToDestroy);
+            Destroy(gameObject);
+        }
+        
     }
 }

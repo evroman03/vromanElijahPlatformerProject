@@ -114,7 +114,15 @@ public class PlayerBehavior : MonoBehaviour
             Bat.SetActive(true);
         }
     }
-    
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bonus")
+        {
+            GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
+            gCBehavior.UpdateScoreBonus();
+            Destroy(collision.gameObject);
+        }
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -123,12 +131,7 @@ public class PlayerBehavior : MonoBehaviour
             JumpTimeout = false;
             DBLJump = true;
         }
-        if (collision.gameObject.tag == "Bonus")
-        {
-            GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
-            gCBehavior.UpdateScoreBonus();
-            Destroy(collision.gameObject);
-        }
+        
         if (collision.gameObject.tag == "Shield")
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();

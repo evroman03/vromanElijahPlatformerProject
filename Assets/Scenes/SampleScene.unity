@@ -594,6 +594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 835060495}
   - component: {fileID: 835060498}
+  - component: {fileID: 835060499}
   - component: {fileID: 835060497}
   - component: {fileID: 835060496}
   m_Layer: 9
@@ -611,8 +612,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835060494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.7708087, y: 2.0075002, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.7596, y: 1.8498, z: 0}
+  m_LocalScale: {x: 0.97747654, y: 1.3154781, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -644,7 +645,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.3, y: 0.05}
+  m_Offset: {x: 0.3, y: -0.0006852448}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -655,7 +656,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.38728094, y: 1.1131175}
+  m_Size: {x: 0.38728094, y: 0.98912734}
   m_EdgeRadius: 0
 --- !u!212 &835060498
 SpriteRenderer:
@@ -709,6 +710,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &835060499
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835060494}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.32504776}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.34550756}
+  m_EdgeRadius: 0
 --- !u!1 &850859019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,7 +1782,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level0_1: {fileID: 1123522583}
-  Level1_1: {fileID: 2073558701608484624, guid: 1a8294cba77117b4585cf51098a4727d, type: 3}
+  LevelPart:
+  - {fileID: 2073558701608484624, guid: 1a8294cba77117b4585cf51098a4727d, type: 3}
+  - {fileID: 2073558701608484624, guid: 9c0701ab72b845c409b9e3abb910c39f, type: 3}
+  - {fileID: 2073558701608484624, guid: abed5ff764b0b7f408c8b844119d7006, type: 3}
+  LevelPartEnd: {fileID: 2073558701608484624, guid: a7789437a0410d4418a0752bf3fae1a6, type: 3}
+  HasEndSpawned: 0
+  chunkCount: 0
   player: {fileID: 963302986}
 --- !u!1 &1463799508
 GameObject:
@@ -1940,10 +1973,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
