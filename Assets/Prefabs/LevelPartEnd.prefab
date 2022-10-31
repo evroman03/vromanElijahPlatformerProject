@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6585279144104027748}
   - component: {fileID: 5907204447353484046}
   - component: {fileID: 3964798486487481891}
+  - component: {fileID: 2337172683494121308}
   m_Layer: 0
   m_Name: SceneChanger
-  m_TagString: Untagged
+  m_TagString: Teleport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +112,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2337172683494121308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559209640073777453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4dfb90373b73b4f8d218f6aa30d891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneToLoad: 2
 --- !u!1 &2073558701608484625
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,6 +49,7 @@ public class LevelGenerator : MonoBehaviour
             Transform levelPartTransform = Instantiate(LevelPartEnd, lastEndPosition, Quaternion.identity);
             HasEndSpawned = true;
         }
+
     }
 
 

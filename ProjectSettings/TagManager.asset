@@ -12,6 +12,9 @@ TagManager:
   - Bonus
   - Shield
   - Drank
+  - Teleport
+  - PatrolMin
+  - PatrolMax
   layers:
   - Default
   - TransparentFX

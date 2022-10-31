@@ -14,12 +14,12 @@ public class GCBehavior : MonoBehaviour
 
     public GameObject LoseScreen;
 
-    public float Stopwatch;
+    public static float Stopwatch;
 
-    public int Lives = 1;
-    public int Shield = 0;
-    public int Drank = 0;
-    public int Score;
+    public static int Lives = 1;
+    public static int Shield = 0;
+    public static int Drank = 0;
+    public static int Score;
 
     public static bool BatCooldown = false;
 
@@ -27,6 +27,10 @@ public class GCBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ScoreText.text = "x" + Score;
+        ShieldText.text = "x" + Shield;
+        DrankText.text = "x" + Drank;
+        StopwatchText.text = " " + Stopwatch;
         Stopwatch = 0f;
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DEATHBehavior : MonoBehaviour
 {
-    private float secondsToDestroy = 30f;
+    private float secondsToDestroy = 35f;
     void Start()
     {
         StartCoroutine(DestroySelf());
