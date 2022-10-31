@@ -62,5 +62,9 @@ public class UMPBehavior : MonoBehaviour
                 GCBehavior.ShieldText.text = "x" + GCBehavior.Shield;
             }
         }*/
+        if (collision.gameObject.tag == "Player")
+        {
+            GCBehavior.UpdateLives();
+        }
     }
 }

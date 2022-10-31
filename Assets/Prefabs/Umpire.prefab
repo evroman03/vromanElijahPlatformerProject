@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1880354730454691944}
   - component: {fileID: 8297272093078817082}
   - component: {fileID: 5999340808089247550}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Umpire
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -20,6 +20,8 @@ public class GCBehavior : MonoBehaviour
     public static int Shield = 0;
     public static int Drank = 0;
     public static int Score;
+    public static int StoredSC;
+    public static int StoredDD;
 
     public static bool BatCooldown = false;
 
@@ -74,12 +76,14 @@ public class GCBehavior : MonoBehaviour
     {
         Shield += 1;
         ShieldText.text = "x" + Shield;
+        StoredSC += 1;
 
     }
     public void UpdateDrank()
     {
         Drank += 1;
         DrankText.text = "x" + Drank;
+        StoredDD += 1;
     }
     
 }

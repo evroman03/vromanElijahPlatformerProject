@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 2073558701608484624}
   - component: {fileID: 7812004392340867435}
   m_Layer: 0
-  m_Name: LevelPartEnd
+  m_Name: LPE 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

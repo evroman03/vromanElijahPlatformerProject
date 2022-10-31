@@ -110,7 +110,7 @@ public class PlayerBehavior : MonoBehaviour
 
 
 
-        if ((Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Mouse0))) && !Sliding && !GCBehavior.BatCooldown)
+        if ((Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Mouse0))) && !Sliding)
         {   
             Bat.SetActive(true);
         }
