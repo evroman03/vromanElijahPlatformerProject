@@ -327,6 +327,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8297272093078817082, guid: e064d558b03bbf847bac540fcb2f4deb, type: 3}
+      propertyPath: PatrolLimit
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8728452669786451937, guid: e064d558b03bbf847bac540fcb2f4deb, type: 3}
       propertyPath: m_Name
       value: Umpire
