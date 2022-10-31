@@ -1698,8 +1698,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level0_1: {fileID: 1123522583}
   LevelPart:
-  - {fileID: 2073558701608484624, guid: 1a8294cba77117b4585cf51098a4727d, type: 3}
-  - {fileID: 2073558701608484624, guid: 9c0701ab72b845c409b9e3abb910c39f, type: 3}
+  - {fileID: 2073558701608484624, guid: 42d6a13db970db949b802f1a634285de, type: 3}
+  - {fileID: 2073558701608484624, guid: 8de73f8523d64094f8f3982e8eee7c26, type: 3}
   - {fileID: 2073558701608484624, guid: abed5ff764b0b7f408c8b844119d7006, type: 3}
   LevelPartEnd: {fileID: 2073558701608484624, guid: 90ed57501a8957f45a4533e2e21ea25c, type: 3}
   HasEndSpawned: 0

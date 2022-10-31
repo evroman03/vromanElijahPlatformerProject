@@ -1698,9 +1698,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level0_1: {fileID: 1123522583}
   LevelPart:
-  - {fileID: 2073558701608484624, guid: 1a8294cba77117b4585cf51098a4727d, type: 3}
-  - {fileID: 2073558701608484624, guid: 9c0701ab72b845c409b9e3abb910c39f, type: 3}
-  - {fileID: 2073558701608484624, guid: abed5ff764b0b7f408c8b844119d7006, type: 3}
+  - {fileID: 2073558701608484624, guid: 2fbfd01a3e8c2844ebcdd63bed3471be, type: 3}
+  - {fileID: 2073558701608484624, guid: ee1fef3dd8f2c9442929f8029267b769, type: 3}
+  - {fileID: 2073558701608484624, guid: fbc9820b2680987488b92b0993093c20, type: 3}
   LevelPartEnd: {fileID: 2073558701608484624, guid: 7334f48bd7a107c49b00c25f7b610ec5, type: 3}
   HasEndSpawned: 0
   chunkCount: 0

@@ -1700,7 +1700,7 @@ MonoBehaviour:
   LevelPart:
   - {fileID: 2073558701608484624, guid: 1a8294cba77117b4585cf51098a4727d, type: 3}
   - {fileID: 2073558701608484624, guid: 9c0701ab72b845c409b9e3abb910c39f, type: 3}
-  - {fileID: 2073558701608484624, guid: abed5ff764b0b7f408c8b844119d7006, type: 3}
+  - {fileID: 2073558701608484624, guid: 49fd3b7b2b09a4a459556320639ae972, type: 3}
   LevelPartEnd: {fileID: 2073558701608484624, guid: a7789437a0410d4418a0752bf3fae1a6, type: 3}
   HasEndSpawned: 0
   chunkCount: 0
