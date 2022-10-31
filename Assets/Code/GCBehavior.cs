@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class GCBehavior : MonoBehaviour
 {
@@ -39,11 +39,7 @@ public class GCBehavior : MonoBehaviour
     {
         Stopwatch = Stopwatch + Time.deltaTime;
         StopwatchText.text = " " + Stopwatch;
-        if (Input.GetKey(KeyCode.R))
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-            LoseScreen.SetActive(false);
-        }
+
     }
     public void UpdateLives()
     {
@@ -51,7 +47,7 @@ public class GCBehavior : MonoBehaviour
 
         if (Lives <= 0 && Shield == 0)
         {
-            LoseScreen.SetActive(true);
+            SceneManager.LoadScene(4);
         }
         else if (Lives <= 0 && Shield == 1)
         {
