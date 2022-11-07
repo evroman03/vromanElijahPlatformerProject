@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class FastballBehavior : MonoBehaviour
 {
-
+    private GameObject Player;
     public GameObject PlayerPos;
     private Rigidbody2D rb;
     
 
     private Vector2 incomingVelocity;
     public float Timer;
-    
-
-
 
 
     void Start()
@@ -22,17 +19,18 @@ public class FastballBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         
         PlayerPos = GameObject.Find("Player");
+        
       
         Vector3 difAngle = (PlayerPos.transform.position - transform.position);
         //Finds difference from players transform and balls transform after ball is spawned
         
-        rb.AddForce(difAngle.normalized * 15f, ForceMode2D.Impulse);
+        rb.AddForce(difAngle.normalized * 20f, ForceMode2D.Impulse);
         //Add force takes destination/endpoint and a magnitude.
 
-        Timer = .85f;
+        Timer = 1.25f;
 
 
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 3.5f);
         //Destorys object after 2 seconds.
     }
 
@@ -44,7 +42,7 @@ public class FastballBehavior : MonoBehaviour
         Timer = Timer - Time.deltaTime;
         if (Timer <= 0)
         {
-            rb.gravityScale = 1.25f;
+            rb.gravityScale = 0.75f;
         }
         //Creates a more realistic gravity effect on ball
     }
@@ -55,12 +53,17 @@ public class FastballBehavior : MonoBehaviour
             var speed = incomingVelocity.magnitude;
             //var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
 
-            rb.velocity = rb.velocity * -1f * speed * 1.75f;
-
-
-
-
-            gameObject.layer = LayerMask.NameToLayer("Ball");
+           
+            print(rb.velocity);
+            if (PlayerPos.GetComponent<SpriteRenderer>().flipX == false)
+            {
+                rb.velocity = new Vector2(-1f * speed * 1.75f, 0.3f);
+            }
+            else
+            {
+                rb.velocity = new Vector2(1f * speed * 1.75f, 0.3f);
+            }
+                gameObject.layer = LayerMask.NameToLayer("Ball");
         
         }
 
@@ -68,8 +71,8 @@ public class FastballBehavior : MonoBehaviour
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
             gCBehavior.UpdateLives();
-            Destroy(gameObject);
-            
+            // Destroy(gameObject);
+
         }
 
         else if (collision.gameObject.tag == "Enemy")
@@ -79,8 +82,5 @@ public class FastballBehavior : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
-        
-
     } 
-
 }

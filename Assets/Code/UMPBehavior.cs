@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
-using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class UMPBehavior : MonoBehaviour

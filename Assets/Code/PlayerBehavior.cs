@@ -21,7 +21,7 @@ public class PlayerBehavior : MonoBehaviour
 
     private SpriteRenderer sr;
     private Rigidbody2D rb2D;
-    public GCBehavior GCBehavior;
+    public GCBehavior GC;
 
     //public static int Drank;
     //public TMP_Text DrankText;
@@ -33,7 +33,7 @@ public class PlayerBehavior : MonoBehaviour
 
     void Start()
     {
-        
+ 
         rb2D = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
@@ -74,7 +74,7 @@ public class PlayerBehavior : MonoBehaviour
             UserSpeed = NormalSpeed;
             //SlideSpeed = 15;
             GCBehavior.Drank -= 1;
-            GCBehavior.DrankText.text = "x" + GCBehavior.Drank;
+            GC.DrankText.text = "x" + GCBehavior.Drank;
             BoostActive = false;
 
         }
@@ -133,10 +133,14 @@ public class PlayerBehavior : MonoBehaviour
             DBLJump = true;
         }
         
-        if (collision.gameObject.tag == "Shield")
+        if (collision.gameObject.tag == "Shield" && GCBehavior.Shield == 0)
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
             gCBehavior.UpdateShield();
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Shield" && GCBehavior.Shield == 1)
+        {
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Drank")
@@ -147,14 +151,17 @@ public class PlayerBehavior : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
-            GCBehavior.UpdateLives();
+            GC.UpdateLives();
             Destroy(collision.gameObject);
-
         }
 
-        if (collision.gameObject.tag == "Drank")
+        if (collision.gameObject.tag == "Drank" && GCBehavior.Drank == 0)
         {
             DrankTimer = 3f;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Drank" && GCBehavior.Drank == 1)
+        {
             Destroy(collision.gameObject);
         }
     }

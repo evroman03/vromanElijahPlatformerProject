@@ -44,7 +44,7 @@ public class LevelGenerator : MonoBehaviour
         {
             SpawnLevelPart();
         }
-        if (chunkCount >= 3 && !HasEndSpawned)
+        if (chunkCount >= 6 && !HasEndSpawned)
         {
             Transform levelPartTransform = Instantiate(LevelPartEnd, lastEndPosition, Quaternion.identity);
             HasEndSpawned = true;

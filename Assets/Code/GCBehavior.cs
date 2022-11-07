@@ -40,7 +40,7 @@ public class GCBehavior : MonoBehaviour
     void Update()
     {
         Stopwatch = Stopwatch + Time.deltaTime;
-        StopwatchText.text = " " + Stopwatch;
+        StopwatchText.text = " " + Stopwatch.ToString("0.00");
 
     }
     public void UpdateLives()
