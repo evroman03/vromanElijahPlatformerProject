@@ -34,8 +34,6 @@ public class GameOverBehavior : MonoBehaviour
     {
         
         SceneManager.LoadScene(1);
-        
-
     }
     public void ExitGame()
     {

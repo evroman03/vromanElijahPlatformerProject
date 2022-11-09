@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
-    public float UserSpeed = 500f;
+    public float UserSpeed = 450f;
     public float BoostSpeed = 750f;
     public float NormalSpeed = 500f;
     public float SlideSpeed = 500f;
