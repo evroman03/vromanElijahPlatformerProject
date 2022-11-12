@@ -14,6 +14,8 @@ public class GameOverBehavior : MonoBehaviour
     public int FS;
     public int SC;
     public int DD;
+
+
     // Start is called before the first frame update
     void Start()
     {

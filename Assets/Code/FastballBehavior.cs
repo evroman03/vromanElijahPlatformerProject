@@ -57,11 +57,11 @@ public class FastballBehavior : MonoBehaviour
             print(rb.velocity);
             if (PlayerPos.GetComponent<SpriteRenderer>().flipX == false)
             {
-                rb.velocity = new Vector2(-1f * speed * 1.75f, 0.3f);
+                rb.velocity = new Vector2(-1f * speed * 1.25f, 0.9f);
             }
             else
             {
-                rb.velocity = new Vector2(1f * speed * 1.75f, 0.3f);
+                rb.velocity = new Vector2(1f * speed * 1.25f, 0.9f);
             }
                 gameObject.layer = LayerMask.NameToLayer("Ball");
         
