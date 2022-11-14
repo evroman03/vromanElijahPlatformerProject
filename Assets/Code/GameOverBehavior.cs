@@ -10,31 +10,36 @@ public class GameOverBehavior : MonoBehaviour
     public TMP_Text FinalScore;
     public TMP_Text ShieldsCollected;
     public TMP_Text DranksDrunk;
-    
-    public int FS;
-    public int SC;
-    public int DD;
-
+    public TMP_Text Highscore;
+    public TMP_Text MostDranksDrunk;
+    public TMP_Text MostShieldsCollected;
+    public TMP_Text YourTime;
+    public TMP_Text FastestTime;
 
     // Start is called before the first frame update
     void Start()
     {
         GC = GetComponent<GCBehavior>();
-        FS = GCBehavior.Score;
-        SC = GCBehavior.StoredSC;
-        DD = GCBehavior.StoredDD;   
         UpdateFinalScore();
-
     }
     public void UpdateFinalScore()
     {
-        FinalScore.text = "Highscore: " + FS;
-        ShieldsCollected.text = "Shields Collected: " + SC;
-        DranksDrunk.text = "Dranks Drunk: " + DD;
+        FinalScore.text = "Your Score: " + GCBehavior.Score;
+        Highscore.text = "HighScore: " + GCBehavior.HighScore;
+
+        ShieldsCollected.text = "Shields Collected: " + GCBehavior.StoredSC;
+        
+
+        DranksDrunk.text = "Dranks Drunk: " + GCBehavior.StoredDD;
+
+
     }
+    
     public void Restart()
     {
-        
+        GCBehavior.Score = 0;
+        GCBehavior.Shield = 0;
+        GCBehavior.Drank = 0;
         SceneManager.LoadScene(1);
     }
     public void ExitGame()

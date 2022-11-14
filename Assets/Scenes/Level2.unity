@@ -1126,10 +1126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f1a398dfa46a346b0cc9d290c12279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UserSpeed: 500
-  BoostSpeed: 750
-  NormalSpeed: 500
-  SlideSpeed: 500
+  UserSpeed: 450
+  BoostSpeed: 800
+  NormalSpeed: 450
+  SlideSpeed: 600
   DrankTimer: 0
   Bat: {fileID: 835060494}
   JumpMag: {x: 0, y: 900}

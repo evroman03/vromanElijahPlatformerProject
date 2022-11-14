@@ -19,9 +19,13 @@ public class GCBehavior : MonoBehaviour
     public static int Lives = 1;
     public static int Shield = 0;
     public static int Drank = 0;
+
     public static int Score;
     public static int StoredSC;
     public static int StoredDD;
+    public static int HighScore = 0;
+   
+  
 
     public static bool BatCooldown = false;
 
@@ -49,7 +53,12 @@ public class GCBehavior : MonoBehaviour
 
         if (Lives <= 0 && Shield == 0)
         {
+            if (Score >= HighScore)
+            {
+                HighScore = Score;
+            }
             SceneManager.LoadScene(4);
+
         }
         else if (Lives <= 0 && Shield == 1)
         {
@@ -69,7 +78,7 @@ public class GCBehavior : MonoBehaviour
     }
     public void UpdateScoreReflectFB()
     {
-        Score += 500;
+        Score += 2000;
         ScoreText.text = "x" + Score;
     }
     public void UpdateShield()
@@ -77,7 +86,6 @@ public class GCBehavior : MonoBehaviour
         Shield += 1;
         ShieldText.text = "x" + Shield;
         StoredSC += 1;
-
     }
     public void UpdateDrank()
     {

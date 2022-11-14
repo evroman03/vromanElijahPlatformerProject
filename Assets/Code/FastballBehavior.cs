@@ -30,7 +30,7 @@ public class FastballBehavior : MonoBehaviour
         Timer = 1.25f;
 
 
-        Destroy(gameObject, 3.5f);
+        Destroy(gameObject, 3f);
         //Destorys object after 2 seconds.
     }
 
@@ -42,7 +42,7 @@ public class FastballBehavior : MonoBehaviour
         Timer = Timer - Time.deltaTime;
         if (Timer <= 0)
         {
-            rb.gravityScale = 0.75f;
+            rb.gravityScale = 1f;
         }
         //Creates a more realistic gravity effect on ball
     }
@@ -54,28 +54,31 @@ public class FastballBehavior : MonoBehaviour
             //var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
 
            
-            print(rb.velocity);
+            
             if (PlayerPos.GetComponent<SpriteRenderer>().flipX == false)
             {
-                rb.velocity = new Vector2(-1f * speed * 1.25f, 0.9f);
+                rb.velocity = new Vector2(-1f * speed * 1.25f, Random.Range(4, 11));
+                print(rb.velocity);
             }
             else
             {
-                rb.velocity = new Vector2(1f * speed * 1.25f, 0.9f);
+                rb.velocity = new Vector2(1f * speed * 1.25f, Random.Range(4, 11));
+                print(rb.velocity);
             }
                 gameObject.layer = LayerMask.NameToLayer("Ball");
+
         
         }
 
-        else if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
             gCBehavior.UpdateLives();
-            // Destroy(gameObject);
+            Destroy(gameObject);
 
         }
 
-        else if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
             gCBehavior.UpdateScoreEnemy();

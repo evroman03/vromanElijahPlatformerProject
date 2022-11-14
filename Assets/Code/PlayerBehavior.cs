@@ -9,9 +9,9 @@ using UnityEngine.SceneManagement;
 public class PlayerBehavior : MonoBehaviour
 {
     public float UserSpeed = 450f;
-    public float BoostSpeed = 750f;
-    public float NormalSpeed = 500f;
-    public float SlideSpeed = 500f;
+    public float BoostSpeed = 800f;
+    public float NormalSpeed = 450f;
+    public float SlideSpeed = 600f;
     public float DrankTimer;
 
     public GameObject Bat;
@@ -122,17 +122,8 @@ public class PlayerBehavior : MonoBehaviour
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
             gCBehavior.UpdateScoreBonus();
             Destroy(collision.gameObject);
-        }
-    }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Platform")
-        {
-            JumpTimeout = false;
-            DBLJump = true;
         }
-        
         if (collision.gameObject.tag == "Shield" && GCBehavior.Shield == 0)
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
@@ -143,20 +134,8 @@ public class PlayerBehavior : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Drank")
-        {
-            GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
-            gCBehavior.UpdateDrank();
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.tag == "Enemy")
-        {
-            GC.UpdateLives();
-            Destroy(collision.gameObject);
-        }
-
         if (collision.gameObject.tag == "Drank" && GCBehavior.Drank == 0)
-        {
+        {         
             DrankTimer = 3f;
             Destroy(collision.gameObject);
         }
@@ -164,5 +143,20 @@ public class PlayerBehavior : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            JumpTimeout = false;
+            DBLJump = true;
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            GC.UpdateLives();
+            Destroy(collision.gameObject);
+        }
+
     }
 }

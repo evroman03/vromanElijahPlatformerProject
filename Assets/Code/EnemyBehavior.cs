@@ -15,7 +15,7 @@ public class EnemyBehavior : MonoBehaviour
 
     void Start()
     {
-        enemyRange = 20;
+        enemyRange = 15;
         AttackDelay = 4f;
         StartCoroutine(ShootTimer());
         
@@ -37,7 +37,7 @@ public class EnemyBehavior : MonoBehaviour
        
         while(true)
         {
-            if (enemyRange < 20)
+            if (enemyRange < 15)
             {
                 Instantiate(Ball, enemyFront.position, Quaternion.identity);
                 yield return new WaitForSecondsRealtime(AttackDelay);

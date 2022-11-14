@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DEATHBehavior : MonoBehaviour
 {
-    private float secondsToDestroy = 35f;
-    void Start()
+    //private float secondsToDestroy = 35f;
+    /*void Start()
     {
         StartCoroutine(DestroySelf());
     }
@@ -19,5 +19,5 @@ public class DEATHBehavior : MonoBehaviour
             Destroy(gameObject);
         }
         
-    }
+    }*/
 }
