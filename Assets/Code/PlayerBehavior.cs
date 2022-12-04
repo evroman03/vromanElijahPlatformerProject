@@ -13,7 +13,7 @@ public class PlayerBehavior : MonoBehaviour
     public float NormalSpeed = 450f;
     public float SlideSpeed = 600f;
     public float DrankTimer;
-
+    public Animator myAnimator;
     public GameObject Bat;
     public Vector2 JumpMag = new Vector2(0, 900);
 
@@ -43,23 +43,32 @@ public class PlayerBehavior : MonoBehaviour
         if (Sliding)
         {
             rb2D.velocity = new Vector2(xMove * SlideSpeed * Time.deltaTime, rb2D.velocity.y);
-            transform.localScale = new Vector2(1.5f, 0.75f);
+            //transform.localScale = new Vector2(1.5f, 0.75f);
+            GetComponent<BoxCollider2D>().size = new Vector2(1.5f, 0.5f);
+            myAnimator.SetBool("Slide", true);
         }
         else
         {
             rb2D.velocity = new Vector2(xMove * UserSpeed * Time.deltaTime, rb2D.velocity.y);
+            myAnimator.SetBool("Walk", true);
         }
+        if (rb2D.velocity == Vector2.zero || Sliding == false)
+        {
+            myAnimator.SetBool("Walk", false);
+            myAnimator.SetBool("Slide", false);
+        }
+       
     }
     private void Update()
     {
         xMove = Input.GetAxis("Horizontal");
         if (xMove < 0)
         {
-            sr.flipX = false;
+            sr.flipX = true;
         }
         else
         {
-            sr.flipX = true;
+            sr.flipX = false;
         }
 
         if (DrankTimer > 0)
@@ -87,8 +96,8 @@ public class PlayerBehavior : MonoBehaviour
         else
         {
             Sliding = false;
-            GetComponent<BoxCollider2D>().size = new Vector2(1.0f, 1.0f);
-            GetComponent<Transform>().localScale = new Vector2(Mathf.Sign(transform.localScale.x) * 1.0f, 1.0f);
+            GetComponent<BoxCollider2D>().size = new Vector2(1.5f, 2.75f);
+            //GetComponent<Transform>().localScale = new Vector2(Mathf.Sign(transform.localScale.x) * 1.0f, 1.0f);
         }
         
 
@@ -100,12 +109,14 @@ public class PlayerBehavior : MonoBehaviour
             rb2D.velocity = Vector2.zero;
             rb2D.AddForce(JumpMag);
             JumpTimeout = true;
+            myAnimator.SetTrigger("Jump");
         }
         else if (DBLJump == true && Input.GetKeyDown(KeyCode.W))
         {
             rb2D.velocity = Vector2.zero;
             rb2D.AddForce(JumpMag);
             DBLJump = false;
+            myAnimator.SetTrigger("Jump");
         }
 
 
@@ -113,6 +124,7 @@ public class PlayerBehavior : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Mouse0))) && !Sliding)
         {   
             Bat.SetActive(true);
+            myAnimator.SetTrigger("Swing");
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)
@@ -143,6 +155,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
