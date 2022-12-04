@@ -53,7 +53,7 @@ public class BatBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
-            gCBehavior.UpdateScoreReflectFB();
+            gCBehavior.UpdateScoreEnemy();
             Destroy(collision.gameObject);
 
         }

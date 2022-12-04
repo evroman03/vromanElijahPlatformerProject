@@ -8,7 +8,8 @@ public class FastballBehavior : MonoBehaviour
     private GameObject Player;
     public GameObject PlayerPos;
     private Rigidbody2D rb;
-    
+
+    public AudioClip BatSound;
 
     private Vector2 incomingVelocity;
     public float Timer;
@@ -52,9 +53,9 @@ public class FastballBehavior : MonoBehaviour
         {
             var speed = incomingVelocity.magnitude;
             //var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
+            AudioSource.PlayClipAtPoint(BatSound, Camera.main.transform.position);
 
-           
-            
+
             if (PlayerPos.GetComponent<SpriteRenderer>().flipX == false)
             {
                 rb.velocity = new Vector2(-1f * speed * 1.25f, Random.Range(4, 11));
@@ -82,8 +83,10 @@ public class FastballBehavior : MonoBehaviour
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
             gCBehavior.UpdateScoreEnemy();
+
             Destroy(collision.gameObject);
             Destroy(gameObject);
+
         }
     } 
 }

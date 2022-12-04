@@ -14,6 +14,12 @@ public class GCBehavior : MonoBehaviour
 
     public GameObject LoseScreen;
 
+    public AudioClip LoseLife;
+    public AudioClip ScoreEnemy;
+    public AudioClip ShieldSound;
+    public AudioClip DrankSound;
+    public AudioClip Trophy;
+
     public static float Stopwatch;
 
     public static int Lives = 1;
@@ -64,12 +70,14 @@ public class GCBehavior : MonoBehaviour
         {
             Shield -= 1;
             ShieldText.text = "x " + Shield;
+            AudioSource.PlayClipAtPoint(LoseLife, Camera.main.transform.position);
         }
     }
     public void UpdateScoreBonus()
     {
         Score += 250;
         ScoreText.text = "x" + Score;
+        AudioSource.PlayClipAtPoint(Trophy, Camera.main.transform.position);
     }
     public void UpdateScoreEnemy()
     {
@@ -80,18 +88,21 @@ public class GCBehavior : MonoBehaviour
     {
         Score += 2000;
         ScoreText.text = "x" + Score;
+        AudioSource.PlayClipAtPoint(ScoreEnemy, Camera.main.transform.position);
     }
     public void UpdateShield()
     {
         Shield += 1;
         ShieldText.text = "x" + Shield;
         StoredSC += 1;
+        AudioSource.PlayClipAtPoint(ShieldSound, Camera.main.transform.position);
     }
     public void UpdateDrank()
     {
         Drank += 1;
         DrankText.text = "x" + Drank;
         StoredDD += 1;
+        AudioSource.PlayClipAtPoint(DrankSound, Camera.main.transform.position);
     }
     
 }

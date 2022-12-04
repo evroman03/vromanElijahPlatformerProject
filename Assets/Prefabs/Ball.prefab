@@ -137,4 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPos: {fileID: 0}
+  BatSound: {fileID: 8300000, guid: 2e0964c42715fed47858ecb649155c8d, type: 3}
+  ScoreEnemy: {fileID: 8300000, guid: 322205a00ea15974ca6f4d0381f732fd, type: 3}
   Timer: 0

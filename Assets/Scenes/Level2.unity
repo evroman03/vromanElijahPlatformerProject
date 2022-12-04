@@ -1125,8 +1125,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.08365962, g: 0.17970474, b: 0.9433962, a: 1}
+  m_Sprite: {fileID: -716322937, guid: 55faf96525ae94c4c8f1b39efe440ced, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1189,6 +1189,7 @@ MonoBehaviour:
   NormalSpeed: 450
   SlideSpeed: 600
   DrankTimer: 0
+  myAnimator: {fileID: 0}
   Bat: {fileID: 835060494}
   JumpMag: {x: 0, y: 900}
   xMove: 0
@@ -1208,9 +1209,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.05, y: 0, z: 0.05, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.2, y: 2.75}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1696,6 +1697,11 @@ MonoBehaviour:
   DrankText: {fileID: 1098391762}
   StopwatchText: {fileID: 2071115688}
   LoseScreen: {fileID: 554786818}
+  LoseLife: {fileID: 0}
+  ScoreEnemy: {fileID: 0}
+  ShieldSound: {fileID: 0}
+  DrankSound: {fileID: 0}
+  Trophy: {fileID: 0}
 --- !u!4 &1248862282
 Transform:
   m_ObjectHideFlags: 0
