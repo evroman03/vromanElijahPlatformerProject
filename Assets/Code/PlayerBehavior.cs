@@ -94,7 +94,7 @@ public class PlayerBehavior : MonoBehaviour
         }
 
         //Resets slide stretching
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             Sliding = true;
         }
@@ -109,14 +109,14 @@ public class PlayerBehavior : MonoBehaviour
         
 
         //DoubleJump
-        if (Input.GetKeyDown(KeyCode.W) && !JumpTimeout)
+        if (Input.GetKeyDown(KeyCode.Space) && !JumpTimeout)
         {
             rb2D.velocity = Vector2.zero;
             rb2D.AddForce(JumpMag);
             JumpTimeout = true;
             myAnimator.SetTrigger("Jump");
         }
-        else if (DBLJump == true && Input.GetKeyDown(KeyCode.W))
+        else if (DBLJump == true && Input.GetKeyDown(KeyCode.Space))
         {
             rb2D.velocity = Vector2.zero;
             rb2D.AddForce(JumpMag);
@@ -126,7 +126,7 @@ public class PlayerBehavior : MonoBehaviour
 
 
 
-        if ((Input.GetKeyDown(KeyCode.Space) || (Input.GetKeyDown(KeyCode.Mouse0))) && !Sliding)
+        if (((Input.GetKeyDown(KeyCode.Mouse0))) && !Sliding)
         {   
             Bat.SetActive(true);
             myAnimator.SetTrigger("Swing");

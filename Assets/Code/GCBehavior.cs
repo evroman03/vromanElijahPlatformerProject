@@ -52,14 +52,22 @@ public class GCBehavior : MonoBehaviour
         Stopwatch = Stopwatch + Time.deltaTime;
         StopwatchText.text = " " + Stopwatch.ToString("0.00");
 
-        if (BatCooldown == true)
+        if (Input.GetKey(KeyCode.Escape))
+
         {
-            //myAnimator.SetBool("Swing", true);
+
+            Application.Quit();
+
         }
-        if (BatCooldown == false)
+
+        else if (Input.GetKey(KeyCode.R))
+
         {
-            //myAnimator.SetBool("Swing", false);
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+
         }
+
     }
     public void UpdateLives()
     {
