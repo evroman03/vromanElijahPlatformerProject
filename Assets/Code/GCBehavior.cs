@@ -30,8 +30,8 @@ public class GCBehavior : MonoBehaviour
     public static int StoredSC;
     public static int StoredDD;
     public static int HighScore = 0;
-   
-  
+
+    public Animator myAnimator;
 
     public static bool BatCooldown = false;
 
@@ -52,6 +52,14 @@ public class GCBehavior : MonoBehaviour
         Stopwatch = Stopwatch + Time.deltaTime;
         StopwatchText.text = " " + Stopwatch.ToString("0.00");
 
+        if (BatCooldown == true)
+        {
+            //myAnimator.SetBool("Swing", true);
+        }
+        if (BatCooldown == false)
+        {
+            //myAnimator.SetBool("Swing", false);
+        }
     }
     public void UpdateLives()
     {

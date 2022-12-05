@@ -571,7 +571,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0037587136}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -582,7 +582,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.0075166}
   m_EdgeRadius: 0
 --- !u!1 &835060494
 GameObject:
@@ -1553,6 +1553,7 @@ MonoBehaviour:
   ShieldSound: {fileID: 8300000, guid: 82fafa57af6f98a459a95e46534658c5, type: 3}
   DrankSound: {fileID: 8300000, guid: c4f437a6a9c771b4e935d10548a3eeba, type: 3}
   Trophy: {fileID: 8300000, guid: 58555c949c2c5b045ab54dc27d1f7d5c, type: 3}
+  myAnimator: {fileID: 963302992}
 --- !u!4 &1248862282
 Transform:
   m_ObjectHideFlags: 0

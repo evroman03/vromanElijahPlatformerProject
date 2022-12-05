@@ -10,7 +10,6 @@ public class BatBehavior : MonoBehaviour
     private SpriteRenderer sr;
     private BoxCollider2D bc;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +19,6 @@ public class BatBehavior : MonoBehaviour
         bc = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         batSwingTimer = batSwingTimer - Time.deltaTime;
@@ -29,8 +27,8 @@ public class BatBehavior : MonoBehaviour
             batSwingTimer = .35f;
             gameObject.SetActive(false);
             GCBehavior.BatCooldown = false;
-
         }
+
         gameObject.transform.position = new Vector3(Player.transform.position.x + offset.x,
             Player.transform.position.y + offset.y, gameObject.transform.position.z);
 

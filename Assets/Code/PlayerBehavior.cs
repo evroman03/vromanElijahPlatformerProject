@@ -47,15 +47,20 @@ public class PlayerBehavior : MonoBehaviour
             GetComponent<BoxCollider2D>().size = new Vector2(1.5f, 0.5f);
             myAnimator.SetBool("Slide", true);
         }
-        else
+        else 
         {
             rb2D.velocity = new Vector2(xMove * UserSpeed * Time.deltaTime, rb2D.velocity.y);
-            myAnimator.SetBool("Walk", true);
+            
         }
+
         if (rb2D.velocity == Vector2.zero || Sliding == false)
         {
             myAnimator.SetBool("Walk", false);
             myAnimator.SetBool("Slide", false);
+        }
+        if (rb2D.velocity.x != 0f)
+        {
+            myAnimator.SetBool("Walk", true);
         }
        
     }
