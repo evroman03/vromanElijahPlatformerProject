@@ -41,7 +41,7 @@ public class EnemyBehavior : MonoBehaviour
             if (enemyRange <= 12)
             {
                 Instantiate(Ball, enemyFront.position, Quaternion.identity);
-                enemyAnimator.SetTrigger("Here'sThePitch");
+                enemyAnimator.SetTrigger("Pitch");
                 yield return new WaitForSecondsRealtime(AttackDelay);
             }
             yield return new WaitForEndOfFrame();
