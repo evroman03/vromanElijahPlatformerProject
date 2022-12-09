@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,17 +42,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -76,20 +76,417 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
-    outline: []
+    sprites:
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 12
+        width: 36
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d95cfb278830a488685db9131ff9bf
+      internalID: -1710440306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_1
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 13
+        width: 28
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 420b86a9e6f426343b6ac8148e52cafc
+      internalID: 1948615845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 12
+        width: 70
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b87031966a5e5d409915ff781414478
+      internalID: -416735535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 65
+        width: 6
+        height: 5
+      alignment: 9
+      pivot: {x: 3.0687816, y: 5.316455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b79db781f83f534c9b9d23693d66dc6
+      internalID: 793919161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_4
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 51
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c565efa1b60fc324f823a5816540959c
+      internalID: 1074957650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_5
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 13
+        width: 70
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9afc48d8b62b84f9d731e3093ea421
+      internalID: -334022101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_6
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 62
+        width: 11
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0545f40e1899fbf47adb04e477611d5d
+      internalID: -742120635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_7
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 12
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227fe63cbc8a10a4aa37b43a3930a296
+      internalID: 852360376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_8
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 12
+        width: 33
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca95955b0fcc02d4bae8abec7a95b6cc
+      internalID: -2001159380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_9
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 13
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954d3fd4e0406f74e9a66673df0a54ae
+      internalID: -1785174752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_10
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 12
+        width: 31
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b405e9102e6452458d93f4c876ff331
+      internalID: 1975333381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (4) 1_11
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 65
+        width: 11
+        height: 5
+      alignment: 9
+      pivot: {x: 2.3244185, y: 6.3118563}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488fa9b5a5201574b8f9e16ba9b6b049
+      internalID: 1878038755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -328, y: -36}
+      - {x: -328, y: -19}
+      - {x: -333, y: 16}
+      - {x: -353, y: 24}
+      - {x: -365, y: 24}
+      - {x: -368, y: 22}
+      - {x: -368, y: 8}
+      - {x: -361, y: -39}
+      - {x: -357, y: -40}
+      - {x: -350, y: -40}
+      - {x: -346, y: -37}
+      - {x: -342, y: -40}
+      - {x: -333, y: -40}
+    - - {x: 29, y: 23}
+      - {x: 27, y: 21}
+      - {x: 27, y: 17}
+      - {x: 28, y: 14}
+      - {x: 24, y: 20}
+      - {x: 19, y: 16}
+      - {x: 19, y: -12}
+      - {x: 29, y: -39}
+      - {x: 32, y: -40}
+      - {x: 43, y: -40}
+      - {x: 68, y: -23}
+      - {x: 68, y: 14}
+      - {x: 62, y: 23}
+    - - {x: 146, y: 28}
+      - {x: 133, y: 28}
+      - {x: 126, y: 27}
+      - {x: 126, y: -37}
+      - {x: 128, y: -40}
+      - {x: 144, y: -40}
+      - {x: 157, y: -19}
+      - {x: 163, y: 4}
+      - {x: 163, y: 14}
+    - - {x: 325, y: -38}
+      - {x: 333, y: -40}
+      - {x: 356, y: -40}
+      - {x: 360, y: -31}
+      - {x: 360, y: 23}
+      - {x: 350, y: 26}
+      - {x: 329, y: 26}
+      - {x: 325, y: 12}
+    - - {x: -254, y: 26}
+      - {x: -258, y: 25}
+      - {x: -259, y: 22}
+      - {x: -259, y: -16}
+      - {x: -256, y: -33}
+      - {x: -236, y: -39}
+      - {x: -227, y: -39}
+      - {x: -227, y: 11}
+      - {x: -242, y: 26}
+    - - {x: -149, y: 28}
+      - {x: -176, y: 8}
+      - {x: -175, y: -1}
+      - {x: -179, y: -13}
+      - {x: -179, y: -38}
+      - {x: -174, y: -39}
+      - {x: -128, y: -39}
+      - {x: -105, y: 8}
+      - {x: -105, y: 16}
+      - {x: -117, y: 28}
+    - - {x: -74, y: 28}
+      - {x: -87, y: 22}
+      - {x: -87, y: 0}
+      - {x: -77, y: -39}
+      - {x: -13, y: -39}
+      - {x: -13, y: 15}
+      - {x: -14, y: 20}
+      - {x: -19, y: 26}
+      - {x: -39, y: 28}
+    - - {x: 224, y: 27}
+      - {x: 224, y: -39}
+      - {x: 231, y: -39}
+      - {x: 234, y: -35}
+      - {x: 239, y: -26}
+      - {x: 234, y: -37}
+      - {x: 236, y: -39}
+      - {x: 246, y: -39}
+      - {x: 260, y: -9}
+      - {x: 260, y: 19}
+      - {x: 248, y: 27}
+    - - {x: 69, y: -14}
+      - {x: 72, y: -13}
+      - {x: 72, y: -10}
+      - {x: 69, y: -9}
+      - {x: 67, y: -11}
+    - - {x: 40, y: -3}
+      - {x: 41, y: -4}
+      - {x: 41, y: -5}
+      - {x: 40, y: -6}
+      - {x: 41, y: -9}
+      - {x: 42, y: -8}
+    - - {x: 55, y: 6}
+      - {x: 55, y: 7}
+      - {x: 58, y: 5}
+      - {x: 57, y: 6}
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pixilart Sprite Sheet (4) 1_7: 852360376
+      Pixilart Sprite Sheet (4) 1_2: -416735535
+      Pixilart Sprite Sheet (4) 1_3: 793919161
+      Pixilart Sprite Sheet (4) 1_4: 1074957650
+      Pixilart Sprite Sheet (4) 1_9: -1785174752
+      Pixilart Sprite Sheet (4) 1_8: -2001159380
+      Pixilart Sprite Sheet (4) 1_0: -1710440306
+      Pixilart Sprite Sheet (4) 1_6: -742120635
+      Pixilart Sprite Sheet (4) 1_10: 1975333381
+      Pixilart Sprite Sheet (4) 1_5: -334022101
+      Pixilart Sprite Sheet (4) 1_1: 1948615845
+      Pixilart Sprite Sheet (4) 1_11: 1878038755
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

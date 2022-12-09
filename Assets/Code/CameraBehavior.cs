@@ -16,7 +16,8 @@ public class CameraBehavior : MonoBehaviour
     void Update()
     {
         gameObject.transform.position = new Vector3(Player.transform.position.x + Offset.x,
-            gameObject.transform.position.y + Offset.y, gameObject.transform.position.z); 
+            gameObject.transform.position.y + Offset.y, gameObject.transform.position.z);
+        print("shit");
     }
 }
  

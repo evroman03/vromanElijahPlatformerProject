@@ -31,8 +31,6 @@ public class GCBehavior : MonoBehaviour
     public static int StoredDD;
     public static int HighScore = 0;
 
-    public Animator myAnimator;
-
     public static bool BatCooldown = false;
 
 

@@ -8,6 +8,7 @@ public class EnemyBehavior : MonoBehaviour
     public Transform enemyFront;
     public Rigidbody2D Enemyrb2D;
     public GameObject PlayerPos;
+    public Animator enemyAnimator;
 
     public float enemyRange;
     public float AttackDelay;
@@ -37,9 +38,10 @@ public class EnemyBehavior : MonoBehaviour
        
         while(true)
         {
-            if (enemyRange < 15)
+            if (enemyRange <= 12)
             {
                 Instantiate(Ball, enemyFront.position, Quaternion.identity);
+                enemyAnimator.SetTrigger("Here'sThePitch");
                 yield return new WaitForSecondsRealtime(AttackDelay);
             }
             yield return new WaitForEndOfFrame();
