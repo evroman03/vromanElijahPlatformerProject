@@ -88,7 +88,7 @@ public class PlayerBehavior : MonoBehaviour
             UserSpeed = NormalSpeed;
             //SlideSpeed = 15;
             GCBehavior.Drank -= 1;
-            GC.DrankText.text = "x" + GCBehavior.Drank;
+            //GC.DrankText.text = "x" + GCBehavior.Drank;
             BoostActive = false;
 
         }

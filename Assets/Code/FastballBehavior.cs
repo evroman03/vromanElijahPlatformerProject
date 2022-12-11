@@ -58,7 +58,6 @@ public class FastballBehavior : MonoBehaviour
          if ( collision.gameObject.tag == "Bat")
         {
             var speed = incomingVelocity.magnitude;
-            print("shit");
             //var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
             AudioSource.PlayClipAtPoint(BatSound, Camera.main.transform.position);
 
