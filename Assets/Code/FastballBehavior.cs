@@ -13,6 +13,7 @@ public class FastballBehavior : MonoBehaviour
 
     private Vector2 incomingVelocity;
     public float Timer;
+    public bool TouchedGround;
 
 
     void Start()
@@ -25,7 +26,7 @@ public class FastballBehavior : MonoBehaviour
         Vector3 difAngle = (PlayerPos.transform.position - transform.position);
         //Finds difference from players transform and balls transform after ball is spawned
         
-        rb.AddForce(difAngle.normalized * 20f, ForceMode2D.Impulse);
+        rb.AddForce(difAngle.normalized * 15f, ForceMode2D.Impulse);
         //Add force takes destination/endpoint and a magnitude.
 
         Timer = 1.25f;
@@ -46,12 +47,18 @@ public class FastballBehavior : MonoBehaviour
             rb.gravityScale = 1f;
         }
         //Creates a more realistic gravity effect on ball
+       
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Bat")
+        {
+            TouchedGround = true;
+        }
          if ( collision.gameObject.tag == "Bat")
         {
             var speed = incomingVelocity.magnitude;
+            print("shit");
             //var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
             AudioSource.PlayClipAtPoint(BatSound, Camera.main.transform.position);
 
@@ -59,24 +66,23 @@ public class FastballBehavior : MonoBehaviour
             if (PlayerPos.GetComponent<SpriteRenderer>().flipX == false)
             {
                 rb.velocity = new Vector2(-1f * speed * 1.25f, Random.Range(4, 11));
-                print(rb.velocity);
+                
             }
             else
             {
                 rb.velocity = new Vector2(1f * speed * 1.25f, Random.Range(4, 11));
-                print(rb.velocity);
+                
             }
                 gameObject.layer = LayerMask.NameToLayer("Ball");
 
         
         }
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !TouchedGround)
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
             gCBehavior.UpdateLives();
             Destroy(gameObject);
-
         }
 
         if (collision.gameObject.tag == "Enemy")

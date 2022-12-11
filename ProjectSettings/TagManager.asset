@@ -15,6 +15,7 @@ TagManager:
   - Teleport
   - PatrolMin
   - PatrolMax
+  - PlatformOutside
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Platform
   - Enemy
   - Bat
-  - 
+  - PlatformOutside
   - 
   - 
   - 
