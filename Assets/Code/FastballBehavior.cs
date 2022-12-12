@@ -26,7 +26,7 @@ public class FastballBehavior : MonoBehaviour
         Vector3 difAngle = (PlayerPos.transform.position - transform.position);
         //Finds difference from players transform and balls transform after ball is spawned
         
-        rb.AddForce(difAngle.normalized * 15f, ForceMode2D.Impulse);
+        rb.AddForce(difAngle.normalized * 18f, ForceMode2D.Impulse);
         //Add force takes destination/endpoint and a magnitude.
 
         Timer = 1.25f;
@@ -64,7 +64,7 @@ public class FastballBehavior : MonoBehaviour
 
             if (PlayerPos.GetComponent<SpriteRenderer>().flipX == false)
             {
-                rb.velocity = new Vector2(-1f * speed * 1.25f, Random.Range(4, 11));
+                rb.velocity = new Vector2(1f * speed * 1.25f, Random.Range(4, 11));
                 
             }
             else
@@ -72,9 +72,7 @@ public class FastballBehavior : MonoBehaviour
                 rb.velocity = new Vector2(1f * speed * 1.25f, Random.Range(4, 11));
                 
             }
-                gameObject.layer = LayerMask.NameToLayer("Ball");
-
-        
+                //gameObject.layer = LayerMask.NameToLayer("Ball");
         }
 
         if (collision.gameObject.tag == "Player" && !TouchedGround)

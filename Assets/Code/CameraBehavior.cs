@@ -17,7 +17,7 @@ public class CameraBehavior : MonoBehaviour
     {
         gameObject.transform.position = new Vector3(Player.transform.position.x + Offset.x,
             gameObject.transform.position.y + Offset.y, gameObject.transform.position.z);
-        print("shit");
+        
     }
 }
  
