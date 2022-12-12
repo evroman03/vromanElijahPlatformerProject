@@ -242,9 +242,29 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 925589861}
+    - target: {fileID: 8386291486815577925, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2690458
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386291486815577925, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0442872
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386291486815577925, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.46530807
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386291486815577925, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.11668301
+      objectReference: {fileID: 0}
     - target: {fileID: 8386291486815577946, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
       propertyPath: m_Name
       value: Bat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386291486815577946, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8386291486815577947, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
       propertyPath: m_RootOrder
@@ -1519,7 +1539,7 @@ MonoBehaviour:
   LevelPartEnd: {fileID: 2073558701608484624, guid: 7334f48bd7a107c49b00c25f7b610ec5, type: 3}
   HasEndSpawned: 0
   chunkCount: 0
-  player: {fileID: 5245110085063653488, guid: 24bb962eba7d13643be727b21a286c17, type: 3}
+  player: {fileID: 925589861}
 --- !u!1 &1463799508
 GameObject:
   m_ObjectHideFlags: 0

@@ -2147,6 +2147,22 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 963302986}
+    - target: {fileID: 8386291486815577925, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3112333
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386291486815577925, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0520921
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386291486815577925, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.47585478
+      objectReference: {fileID: 0}
+    - target: {fileID: 8386291486815577925, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.11278033
+      objectReference: {fileID: 0}
     - target: {fileID: 8386291486815577946, guid: 3cd3cfd1b8cddb44094177f082f576a0, type: 3}
       propertyPath: m_Name
       value: Bat

@@ -85,7 +85,7 @@ public class FastballBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
-            gCBehavior.UpdateScoreEnemy();
+            gCBehavior.UpdateScoreReflectFB();
 
             Destroy(collision.gameObject);
             Destroy(gameObject);

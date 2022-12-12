@@ -26,6 +26,7 @@ public class LevelGenerator : MonoBehaviour
     private void Awake()
     {
         lastEndPosition = Level0_1.Find("EndPosition").position;
+        print("shit");
         SpawnLevelPart();
         //This calls the SpawnLevelPart f(x) 
         //Spawns a new level part after the previous one
