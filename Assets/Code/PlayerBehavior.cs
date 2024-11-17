@@ -44,7 +44,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             rb2D.velocity = new Vector2(xMove * SlideSpeed * Time.deltaTime, rb2D.velocity.y);
             //transform.localScale = new Vector2(1.5f, 0.75f);
-            GetComponent<BoxCollider2D>().size = new Vector2(1.5f, 0.5f);
+            GetComponent<BoxCollider2D>().size = new Vector2(1.25f, 0.5f);
             myAnimator.SetBool("Slide", true);
         }
         else 
@@ -127,8 +127,9 @@ public class PlayerBehavior : MonoBehaviour
 
 
         if (((Input.GetKeyDown(KeyCode.Mouse0))) && !Sliding)
-        {   
-            Bat.SetActive(true);
+        {
+            BatBehavior temp = Bat.GetComponent<BatBehavior>();
+            temp.CallSwing();
             myAnimator.SetTrigger("Swing");
         }
     }

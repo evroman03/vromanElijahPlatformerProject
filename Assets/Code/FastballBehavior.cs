@@ -55,25 +55,7 @@ public class FastballBehavior : MonoBehaviour
         {
             TouchedGround = true;
         }
-         if ( collision.gameObject.tag == "Bat")
-        {
-            var speed = incomingVelocity.magnitude;
-            //var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
-            AudioSource.PlayClipAtPoint(BatSound, Camera.main.transform.position);
-
-
-            if (PlayerPos.GetComponent<SpriteRenderer>().flipX == false)
-            {
-                rb.velocity = new Vector2(1f * speed * 1.25f, Random.Range(4, 11));
-                
-            }
-            else
-            {
-                rb.velocity = new Vector2(1f * speed * 1.25f, Random.Range(4, 11));
-                
-            }
-                //gameObject.layer = LayerMask.NameToLayer("Ball");
-        }
+         
 
         if (collision.gameObject.tag == "Player" && !TouchedGround)
         {
@@ -91,5 +73,51 @@ public class FastballBehavior : MonoBehaviour
             Destroy(gameObject);
 
         }
-    } 
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bat")
+        {
+            
+            var speed = incomingVelocity.magnitude;
+            //var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
+            AudioSource.PlayClipAtPoint(BatSound, Camera.main.transform.position);
+
+
+            if (PlayerPos.GetComponent<SpriteRenderer>().flipX == false)
+            {
+                rb.velocity = new Vector2(1f * speed * 1.25f, Random.Range(4, 11));
+
+            }
+            else
+            {
+                rb.velocity = new Vector2(1f * speed * 1.25f, Random.Range(4, 11));
+
+            }
+            //gameObject.layer = LayerMask.NameToLayer("Ball");
+        }
+    }
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bat")
+        {
+
+            var speed = incomingVelocity.magnitude;
+            //var direction = Vector2.Reflect(incomingVelocity.normalized, collision.contacts[0].normal);
+            AudioSource.PlayClipAtPoint(BatSound, Camera.main.transform.position);
+
+
+            if (PlayerPos.GetComponent<SpriteRenderer>().flipX == false)
+            {
+                rb.velocity = new Vector2(1f * speed * 1.25f, Random.Range(4, 11));
+
+            }
+            else
+            {
+                rb.velocity = new Vector2(1f * speed * 1.25f, Random.Range(4, 11));
+
+            }
+            //gameObject.layer = LayerMask.NameToLayer("Ball");
+        }
+    }
 }

@@ -97,6 +97,7 @@ public class GCBehavior : MonoBehaviour
     {
         Score += 1000;
         ScoreText.text = "x" + Score;
+        AudioSource.PlayClipAtPoint(ScoreEnemy, Camera.main.transform.position);
     }
     public void UpdateScoreReflectFB()
     {

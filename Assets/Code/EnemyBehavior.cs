@@ -35,7 +35,6 @@ public class EnemyBehavior : MonoBehaviour
     
     IEnumerator ShootTimer()
     {
-       
         while(true)
         {
             if (enemyRange <= 12)

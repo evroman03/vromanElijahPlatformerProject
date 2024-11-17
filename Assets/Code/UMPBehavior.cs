@@ -39,31 +39,4 @@ public class UMPBehavior : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1f, transform.localScale.y);
         PatrolSpeed *= -1f;
     }
-
-    public void OnTriggerEnter2D(Collider2D collision)
-    {/*
-        if (collision.gameObject.tag == "Bat")
-        {
-            GCBehavior gCBehavior = FindObjectOfType<GCBehavior>();
-            gCBehavior.UpdateScoreEnemy();
-            Destroy(gameObject);
-        }
-        if (collision.gameObject.tag == "Player")
-        {
-            if (GCBehavior.Shield < 1)
-            {
-                //LoseScreen
-            }
-            if (GCBehavior.Shield > 1)
-            {
-                print("shit");
-                GCBehavior.Shield -= 1;
-                GCBehavior.ShieldText.text = "x" + GCBehavior.Shield;
-            }
-        }*/
-        if (collision.gameObject.tag == "Player")
-        {
-            GCBehavior.UpdateLives();
-        }
-    }
 }
